@@ -20,7 +20,7 @@ export class PostsResolver {
   getUser(@Parent() post: Post) {
     return { __typename: 'User', id: post.userId };
   }
-
+  
   @ResolveReference()
   resolveReference(reference: { __typename: string; id: string }) {
       console.log(reference)

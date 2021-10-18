@@ -3,6 +3,7 @@ type Post @key(fields: "id") {
   id: ID!
   title: String!
   body: String!
+  user: User
 }
 
 extend type User @key(fields: "id") {
