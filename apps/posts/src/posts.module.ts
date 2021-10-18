@@ -1,10 +1,16 @@
+
 import { Module } from '@nestjs/common';
-import { PostsController } from './posts.controller';
+import { GraphQLFederationModule } from '@nestjs/graphql';
+import { join } from 'path';
+import { PostsResolver } from './posts.resolver';
 import { PostsService } from './posts.service';
 
 @Module({
-  imports: [],
-  controllers: [PostsController],
-  providers: [PostsService],
+  imports: [
+    GraphQLFederationModule.forRoot({
+      typePaths: [join(process.cwd(), 'apps/posts/src/shema.gql')],
+    }),
+  ],
+  providers: [PostsResolver, PostsService],
 })
-export class PostsModule {}
+export class AppModule {}
