@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/woc-marketplace/src",
+  "monorepo": true,
+  "root": "apps/woc-marketplace",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/woc-marketplace/tsconfig.app.json"
+  },
+  "projects": {
+    "user": {
+      "type": "application",
+      "root": "apps/user",
+      "entryFile": "main",
+      "sourceRoot": "apps/user/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    },
+    "plugin": {
+      "type": "application",
+      "root": "apps/plugin",
+      "entryFile": "main",
+      "sourceRoot": "apps/plugin/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/plugin/tsconfig.app.json"
+      }
+    }
+  }
+}
