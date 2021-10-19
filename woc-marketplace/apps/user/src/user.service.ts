@@ -4,9 +4,10 @@ import { User } from './user.entity';
 @Injectable()
 export class UserService {
   private userData: User[] = [
-    new User(1, 'anus post'),
-    new User(2, 'kanker post'),
-    new User(3, 'poopie post'),
+    new User(1, 'Mario'),
+    new User(2, 'Tom'),
+    new User(3, 'Lars'),
+    new User(4, 'Emil'),
   ];
 
   findById(id: number): User {
