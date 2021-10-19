@@ -1,4 +1,5 @@
 import { Directive, ObjectType, Field, ID } from '@nestjs/graphql';
+import { PxmPlugin } from './plugin.entity';
 
 @ObjectType()
 @Directive('@extends')
@@ -8,6 +9,6 @@ export class User {
   @Directive('@external')
   id: number;
 
-  @Field((type) => [Plugin])
-  posts?: Plugin[];
+  @Field((type) => [PxmPlugin])
+  posts?: PxmPlugin[];
 }

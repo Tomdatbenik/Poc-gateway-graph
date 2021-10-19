@@ -16,7 +16,7 @@ export class PxmPlugin {
   @Field((type) => User)
   user?: User;
 
-  constructor(id, title, authorId) {
+  constructor(id: number, title: string, authorId: number) {
     this.id = id;
     this.title = title;
     this.authorId = authorId;
