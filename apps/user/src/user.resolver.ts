@@ -1,20 +1,18 @@
-
-import { Logger } from '@nestjs/common';
-import { Resolver, Query, Args, ResolveReference, ResolveField, Parent } from '@nestjs/graphql';
+import { Args, Query, Resolver, ResolveReference } from '@nestjs/graphql';
+import { User } from './user.entity';
 import { UserService } from './user.service';
 
-@Resolver('User')
-export class UserResolver {
+@Resolver((of) => User)
+export class UsersResolver {
   constructor(private usersService: UserService) {}
 
-  @Query()
-  getUser(@Args('id') id: string) {
+  @Query((returns) => User)
+  getUser(@Args('id') id: number): User {
     return this.usersService.findById(id);
   }
-  
+
   @ResolveReference()
-  resolveReference(reference: { __typename: string; id: string }) {
-    console.log(reference)
+  resolveReference(reference: { __typename: string; id: number }): User {
     return this.usersService.findById(reference.id);
   }
 }
