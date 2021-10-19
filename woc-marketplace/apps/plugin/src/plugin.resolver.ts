@@ -1,4 +1,4 @@
-import { Query, Args, ResolveField, Resolver, Parent } from '@nestjs/graphql';
+import { Query, Args, ResolveField, Resolver, Parent, Int } from '@nestjs/graphql';
 import { User } from './user.entity';
 import { PluginService } from './plugin.service';
 import { PxmPlugin } from './plugin.entity';
@@ -8,7 +8,7 @@ export class PluginResolver {
   constructor(private readonly pluginService: PluginService) {}
 
   @Query((returns) => PxmPlugin)
-  findPxmPlugin(@Args('id') id: number): PxmPlugin {
+  findPxmPlugin(@Args('id', { type: () => Int }) id: number): PxmPlugin {
     return this.pluginService.findOne(id);
   }
 

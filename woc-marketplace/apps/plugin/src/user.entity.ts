@@ -10,5 +10,5 @@ export class User {
   id: number;
 
   @Field((type) => [PxmPlugin])
-  posts?: PxmPlugin[];
+  plugins?: PxmPlugin[];
 }
