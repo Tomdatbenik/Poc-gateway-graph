@@ -21,4 +21,10 @@ var Profiles = []*model.Profile {
 		Phone: "00-0000-0003",
 		Job: "ios developer",
 	},
+	{
+		UserID: "4",
+		Age: "22",
+		Phone: "00-0000-0003",
+		Job: "ios developer",
+	},
 }
